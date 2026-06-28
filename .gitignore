@@ -1,0 +1,41 @@
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Env
+.env
+.env.local
+.env.production
+.env.development
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-store/
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Go
+vendor/
+
+# Rust
+target/
+
+# Generated
+*.generated.*
+dist/
+build/

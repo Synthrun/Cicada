@@ -1,0 +1,8 @@
+# Cicada security audit skill — slash command config
+# This file is read by Cicada-aware LLM tools.
+# Place in project root or home directory.
+
+command: /cicada
+description: Run a security audit on the current project
+skill: SKILL.md
+modes: [report, interactive, auto-fix]

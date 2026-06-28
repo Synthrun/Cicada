@@ -739,29 +739,56 @@ For each finding:
 
 ---
 
-## Report Template
+## Report Generation
+
+**Write the report to a timestamped file** in the project's `cicada/` directory.
+
+```
+cicada/report-YYYY-MM-DD-HHMMSS.md
+```
+
+The LLM should create `cicada/` if missing and append `-fixed` suffix when fixes were applied.
+
+### Template
 
 ```markdown
-# Security Audit Report — `<Project Name>`
+# 🔐 Security Audit Report — `<Project Name>`
 
-**Audit date:** YYYY-MM-DD  
-**Mode:** Report only / Interactive fix / Auto-fix all  
-**Framework(s):** Node.js/Express + Flutter  
-**Domains:** 16 domains checked
+<div align="center">
+
+**Audit date:** YYYY-MM-DD HH:MM:SS  
+**Audit mode:** Report only / Interactive fix / Auto-fix all  
+**Framework(s) detected:** Node.js/Express, Flutter, Docker  
+**Domains checked:** 16 / 16  
+**Method:** Static code analysis (no runtime testing)  
+
+</div>
+
+## 📋 Executive Summary
 
 | Severity | Count | Fixed |
 |----------|-------|-------|
-| 🔴 Critical | N | N |
-| 🟠 High | N | N |
-| 🟡 Medium | N | N |
-| 🔵 Low | N | N |
+| 🔴 **Critical** | 0 | 0 |
+| 🟠 **High** | 0 | 0 |
+| 🟡 **Medium** | 0 | 0 |
+| 🔵 **Low** | 0 | 0 |
+| ⚪ **Info** | 0 | — |
+
+## 🔴 Critical Findings
 
 ### [C-1] Title
-- **File:** `path/to/file.ts:42`
-- **Domain:** API & Input / Cloud / Mobile / ...
-- **Status:** 🔴 Unfixed / ✅ Fixed
-- **Evidence:** vulnerable code snippet
-- **Fix applied:** fixed code snippet
+| Field | Value |
+|-------|-------|
+| **File** | `path/to/file.ts:42` |
+| **Domain** | Secrets & Configuration |
+| **Status** | 🔴 Unfixed / ✅ Fixed |
+| **CWE** | CWE-312 |
+| **Description** | What the issue is. |
+| **Impact** | An attacker with repo access can... |
+| **Evidence** | vulnerable code snippet |
+| **Fix applied** | fixed code snippet |
+
+> **Report path:** `cicada/report-YYYY-MM-DD-HHMMSS.md`
 ```
 
 ---
@@ -790,6 +817,7 @@ For each finding:
 8. **Fix responsibly** — `read` first, then `edit` with precise oldString/newString.
 9. **Track fixes** — verify after each change.
 10. **Mobile sensitivity** — prioritize: API keys → storage → SSL pinning → deep links.
+11. **Report output** — always write to `cicada/report-YYYY-MM-DD-HHMMSS.md`. Append `-fixed` if fixes applied.
 
 ---
 
@@ -855,6 +883,24 @@ domains: 16
 CICADA_EOF
 echo "✓ Created $CICADA_DIR/.cicada"
 
+# ── Create cicada/ output directory (for audit reports) ─
+REPORT_DIR="$PWD/cicada"
+mkdir -p "$REPORT_DIR"
+touch "$REPORT_DIR/.gitkeep"
+echo "✓ Created $REPORT_DIR/ (audit reports go here)"
+
+# ── Ensure .gitignore includes cicada/ reports ──────
+GITIGNORE="$PWD/.gitignore"
+if [ -f "$GITIGNORE" ]; then
+  if ! grep -q "cicada/\*\.md" "$GITIGNORE" 2>/dev/null; then
+    echo -e "\n# Cicada audit reports\ncicada/*.md\n!cicada/.gitkeep" >> "$GITIGNORE"
+    echo "→ Added cicada/ reports to $GITIGNORE"
+  fi
+else
+  echo -e "# Cicada audit reports\ncicada/*.md\n!cicada/.gitkeep" > "$GITIGNORE"
+  echo "✓ Created $GITIGNORE with cicada/ report rules"
+fi
+
 # ── Symlink to project root (optional) ─────────────
 if [ "$CICADA_DIR" != "$PWD/.cicada" ]; then
   for f in AGENTS.md opencode.json; do
@@ -877,5 +923,6 @@ echo "│  Or say:                                                  │"
 echo "│    \"security audit\"                                       │"
 echo "│                                                          │"
 echo "│  Installed at: $CICADA_DIR                    │"
+echo "│  Reports go to:  $REPORT_DIR/                   │"
 echo "│  Domains covered: 16                                      │"
 echo "└──────────────────────────────────────────────────────────┘"

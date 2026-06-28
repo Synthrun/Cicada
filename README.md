@@ -85,13 +85,17 @@ cicada/
 ├── SKILL.md               ← Main skill — the security audit engine (2132 lines, 16 domains)
 ├── AGENTS.md              ← Agent config for CLAUDE / OPENCODE (/cicada)
 ├── opencode.json          ← OPENCODE agent registration (/cicada)
+├── install.sh             ← One-line installer
 ├── README.md              ← This file
-├── report.md              ← Generated audit report
 ├── .gitignore             ← Standard ignores
 ├── .env.example           ← Secure env template
 ├── .cicada                ← Config marker for LLM tool discovery
-└── templates/
-    └── report-template.md ← Report output template
+├── templates/
+│   └── report-template.md ← Report output template
+└── docs/
+    ├── index.html         ← Landing page (HTML)
+    ├── style.css          ← Landing page (CSS)
+    └── script.js          ← Landing page (JS)
 ```
 
 ---

@@ -121,6 +121,7 @@ crash.log
 
 # ─── Generated ────────────────────────────────────────
 *.generated.*
+report.md
 dist/
 build/
 out/

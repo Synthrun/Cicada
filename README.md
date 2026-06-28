@@ -1,11 +1,11 @@
 # Cicada — Security Audit & Fix Skill
 
-<img width="1774" height="887" alt="cicada" src="https://github.com/user-attachments/assets/a6509abf-6b07-4394-a988-9e92649d55d7" />
-
-
 [![LLM Compatible](https://img.shields.io/badge/LLM-CODEX%20%7C%20CLAUDE%20%7C%20OPENCODE-blue)](#)
 [![Skill](https://img.shields.io/badge/type-security--audit-success)](#)
 [![Domains](https://img.shields.io/badge/domains-16-green)](#)
+
+
+<img width="1774" height="887" alt="cicada" src="https://github.com/user-attachments/assets/a6509abf-6b07-4394-a988-9e92649d55d7" />
 
 A comprehensive security audit skill for LLM coding agents. Runs `/cicada` to scan your backend, mobile, cloud, and infra code for vulnerabilities — then optionally fixes them.
 

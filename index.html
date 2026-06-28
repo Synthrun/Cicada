@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cicada — Security Audit Skill</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Patrick+Hand&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="bug">🦗</span> CICADA
+  </a>
+  <ul class="nav-links">
+    <li><a href="#install">Install</a></li>
+    <li><a href="#how">How it Works</a></li>
+    <li><a href="#modes">Modes</a></li>
+    <li><a href="#domains">Domains</a></li>
+    <li><a href="#agents">Agents</a></li>
+    <li><a href="#ci">CI/CD</a></li>
+    <li><a href="https://github.com/Synthrun/Cicada" target="_blank">GitHub →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-deco">reads code · finds risks · keeps you safe</div>
+  <div class="hero-deco-right">16 domains · 3 modes · ci support</div>
+
+  <p class="hero-eyebrow">🔐 Security Audit Skill for LLM Coding Agents</p>
+  <h1>CICADA</h1>
+  <p class="hero-sub">· Security Audit Skill ·</p>
+
+  <p class="hero-tagline">
+    One command. Your agent scans your entire codebase across 16 security domains —
+    auth, cloud, mobile, crypto, CI/CD, and more — then optionally fixes everything.
+  </p>
+
+  <div class="hero-badges">
+    <span class="badge green">LLM Compatible</span>
+    <span class="badge">16 Audit Domains</span>
+    <span class="badge">3 Operation Modes</span>
+    <span class="badge">CI Integration</span>
+    <span class="badge">MIT License</span>
+    <span class="badge">Read-Only by Default</span>
+  </div>
+
+  <div class="hero-cta">
+    <a href="#install" class="btn-primary">Get Started</a>
+    <a href="https://github.com/Synthrun/Cicada" target="_blank" class="btn-secondary">View on GitHub</a>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat">
+      <span class="stat-num">16</span>
+      <span class="stat-label">Audit Domains</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">3</span>
+      <span class="stat-label">Modes</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">10+</span>
+      <span class="stat-label">Frameworks</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">4</span>
+      <span class="stat-label">Agents</span>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    ↓ scroll
+  </div>
+</div>
+
+<div class="chalk-divider"></div>
+
+<!-- INSTALL -->
+<section id="install">
+  <div class="section-label">Installation</div>
+  <h2>One-Line Install</h2>
+  <p class="section-intro">
+    Paste this in your terminal. Cicada installs <code class="inline">SKILL.md</code> and config files
+    into a <code class="inline">.cicada/</code> directory in your project root. That's it.
+  </p>
+
+  <div class="install-block">
+    <span class="install-block-label">bash</span>
+    <div class="code-block" style="position:relative;">
+      <button class="copy-btn" onclick="navigator.clipboard.writeText('bash <(curl -fsSL https://raw.githubusercontent.com/Synthrun/Cicada/main/install.sh)')">copy</button>
+      <pre><span class="cmd">bash &lt;(curl -fsSL https://raw.githubusercontent.com/Synthrun/Cicada/main/install.sh)</span></pre>
+    </div>
+  </div>
+
+  <div class="install-block">
+    <span class="install-block-label">local repo</span>
+    <div class="code-block">
+      <pre><span class="comment"># If the repo is already cloned locally:</span>
+<span class="cmd">bash path/to/cicada/install.sh</span></pre>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <strong>Tip:</strong> The LLM agent can also auto-install for you — just tell it <em>"install cicada"</em> and it will run the install script on your behalf, then immediately start the audit.
+  </div>
+
+  <div style="margin-top: 44px;">
+    <div class="section-label">After Install</div>
+    <h3>Invoke the audit</h3>
+    <div class="install-block" style="margin-top:16px;">
+      <span class="install-block-label">in your agent chat</span>
+      <div class="code-block">
+        <pre><span class="highlight">/cicada</span>             <span class="comment"># primary command</span>
+
+<span class="comment"># or say any of these:</span>
+<span class="cmd">security audit</span>
+<span class="cmd">vulnerability scan</span>
+<span class="cmd">audit my backend</span>
+<span class="cmd">check for vulnerabilities</span>
+<span class="cmd">is my app secure</span>
+<span class="cmd">pentest my code</span></pre>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 36px;">
+    <p class="section-intro" style="margin-bottom: 16px;">Compatible frameworks — auto-detected, no config needed:</p>
+    <div class="framework-row">
+      <span class="fw-tag">Node.js</span>
+      <span class="fw-tag">Express</span>
+      <span class="fw-tag">Next.js</span>
+      <span class="fw-tag">NestJS</span>
+      <span class="fw-tag">Django</span>
+      <span class="fw-tag">Flask</span>
+      <span class="fw-tag">FastAPI</span>
+      <span class="fw-tag">Go / Gin</span>
+      <span class="fw-tag">Rails</span>
+      <span class="fw-tag">Laravel</span>
+      <span class="fw-tag">Spring Boot</span>
+      <span class="fw-tag">Flutter</span>
+      <span class="fw-tag">React Native</span>
+    </div>
+  </div>
+</section>
+
+<div class="chalk-divider"></div>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-label">Workflow</div>
+  <h2>How It Works</h2>
+  <p class="section-intro">
+    Cicada is a structured prompt skill — your LLM agent loads it, then executes a systematic
+    audit across your codebase. Every step is transparent and controllable.
+  </p>
+
+  <div class="flow-steps">
+    <div class="flow-step">
+      <span class="step-num">01</span>
+      <div class="step-title">Invoke</div>
+      <div class="step-desc">You type <code class="inline">/cicada</code> (or a trigger phrase). Your agent loads the SKILL.md engine.</div>
+    </div>
+    <div class="flow-step">
+      <span class="step-num">02</span>
+      <div class="step-title">Choose Mode</div>
+      <div class="step-desc">Agent asks: report-only, interactive fix, or auto-fix all. You pick. It never touches code without your say.</div>
+    </div>
+    <div class="flow-step">
+      <span class="step-num">03</span>
+      <div class="step-title">Detect Stack</div>
+      <div class="step-desc">Reads <code class="inline">package.json</code>, <code class="inline">requirements.txt</code>, <code class="inline">pubspec.yaml</code>, etc. Only runs checks relevant to your stack.</div>
+    </div>
+    <div class="flow-step">
+      <span class="step-num">04</span>
+      <div class="step-title">Audit</div>
+      <div class="step-desc">Sweeps all 16 domains. Searches patterns, reads context (20–40 lines), assesses severity.</div>
+    </div>
+    <div class="flow-step">
+      <span class="step-num">05</span>
+      <div class="step-title">Fix & Report</div>
+      <div class="step-desc">Applies fixes (if mode 2/3). Generates <code class="inline">report.md</code> with every finding, severity, and file:line reference.</div>
+    </div>
+  </div>
+</section>
+
+<div class="chalk-divider"></div>
+
+<!-- MODES -->
+<section id="modes">
+  <div class="section-label">Operation</div>
+  <h2>3 Operation Modes</h2>
+  <p class="section-intro">
+    Choose your level of automation. Cicada asks before it acts — always.
+  </p>
+
+  <div class="modes-grid">
+    <div class="mode-card">
+      <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+      <div class="mode-num">01</div>
+      <div class="mode-title">Report Only</div>
+      <div class="mode-desc">
+        Full audit, zero changes. Agent reads every source file, runs all checks, and produces a
+        <code class="inline">report.md</code> with severity ratings and file:line references. Nothing touched.
+      </div>
+      <span class="mode-tag">Read-only · Best for CI</span>
+    </div>
+
+    <div class="mode-card">
+      <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+      <div class="mode-num">02</div>
+      <div class="mode-title">Interactive Fix</div>
+      <div class="mode-desc">
+        For each finding, agent asks <em>"Fix this? (y/n/skip-all)"</em>. Fixes are applied only
+        on explicit confirmation. Final report documents what was fixed and what was skipped.
+      </div>
+      <span class="mode-tag">Guided · Best for review</span>
+    </div>
+
+    <div class="mode-card">
+      <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+      <div class="mode-num">03</div>
+      <div class="mode-title">Auto-Fix All</div>
+      <div class="mode-desc">
+        Full audit runs, summary shown. One confirmation: <em>"Fix all? (y/n)"</em>. Optional diff
+        preview. All fixes applied, every change documented in the final report.
+      </div>
+      <span class="mode-tag">Automated · Best for speed</span>
+    </div>
+  </div>
+
+  <div class="note-box" style="margin-top: 24px;">
+    <strong>Read-only by default.</strong> Cicada never modifies your code until you explicitly choose Mode 2 or Mode 3 and confirm. Every fix includes a copy-paste snippet in the correct language for your stack.
+  </div>
+</section>
+
+<div class="chalk-divider"></div>
+
+<!-- 16 DOMAINS -->
+<section id="domains">
+  <div class="section-label">Coverage</div>
+  <h2>16 Audit Domains</h2>
+  <p class="section-intro">
+    Every check includes pattern searches, contextual code reads, severity assessment,
+    and a ready-to-use fix snippet. Framework auto-detection means only relevant checks run.
+  </p>
+
+  <div class="domains-grid">
+    <div class="domain-item">
+      <span class="domain-num">01</span>
+      <span class="domain-icon">🔑</span>
+      <div>
+        <div class="domain-name">Auth & Sessions</div>
+        <div class="domain-desc">JWT, OAuth, magic links, MFA, timing attacks, account lockout, session invalidation</div>
+      </div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-num">02</span>
+      <span class="domain-icon">🔒</span>
+      <div>
+        <div class="domain-name">Password Reset</div>
+        <div class="domain-desc">Token generation entropy, expiry, single-use enforcement, enumeration protection</div>
+      </div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-num">03</span>
+      <span class="domain-icon">🔌</span>
+      <div>
+        <div class="domain-name">Connectors</div>
+        <div class="domain-desc">API keys, webhooks, DB connections, third-party SDK secrets, signature verification</div>
+      </div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-num">04</span>
+      <span class="domain-icon">{ }</span>
+      <div>
+        <div class="domain-name">API & Input</div>
+        <div class="domain-desc">SQL/NoSQL/command injection, CORS, rate limiting, input validation, security headers</div>
+      </div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-num">05</span>
+      <span class="domain-icon">🗝️</span>
+      <div>
+        <div class="domain-name">Secrets & Config</div>
+        <div class="domain-desc">.env exposure, hardcoded keys, credential logging, gitignore checks</div>
+      </div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-num">06</span>
+      <span class="domain-icon">📦</span>
+      <div>
+        <div class="domain-name">Dependencies & Infra</div>
+        <div class="domain-desc">Outdated packages, HTTPS enforcement, TLS config, error handling patterns</div>
+      </div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-num">07</span>
+      <span class="domain-icon">🌐</span>
+      <div>
+        <div class="domain-name">Web Frameworks</div>
+        <div class="domain-desc">Express, Next.js, NestJS, Django, Flask, FastAPI, Gin, Rails, Laravel, Spring Boot</div>
+      </div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-num">08</span>
+      <span class="domain-icon">📱</span>
+      <div>
+        <div class="domain-name">Mobile Security</div>
+        <div class="domain-desc">Flutter + React Native: deep links, secure storage, SSL pinning, obfuscation, ATS</div>
+      </div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-num">09</span>
+      <span class="domain-icon">☁️</span>
+      <div>
+        <div class="domain-name">Cloud & Infrastructure</div>
+        <div class="domain-desc">Docker, Kubernetes, S3 buckets, IAM roles, security groups, CloudTrail, VPCs</div>
+      </div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-num">10</span>
+      <span class="domain-icon">⬡</span>
+      <div>
+        <div class="domain-name">GraphQL</div>
+        <div class="domain-desc">Introspection, query depth limits, cost analysis, per-resolver auth, batching attacks</div>
+      </div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-num">11</span>
+      <span class="domain-icon">⚡</span>
+      <div>
+        <div class="domain-name">WebSocket</div>
+        <div class="domain-desc">Origin validation, WS auth, message rate limiting, replay protection, idle timeout</div>
+      </div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-num">12</span>
+      <span class="domain-icon">📎</span>
+      <div>
+        <div class="domain-name">File Upload</div>
+        <div class="domain-desc">Magic bytes validation, size limits, zip bombs, path traversal, EXIF stripping</div>
+      </div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-num">13</span>
+      <span class="domain-icon">🛡️</span>
+      <div>
+        <div class="domain-name">Data Privacy</div>
+        <div class="domain-desc">PII classification, GDPR/CCPA, data export/delete, consent records, retention</div>
+      </div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-num">14</span>
+      <span class="domain-icon">🔐</span>
+      <div>
+        <div class="domain-name">Cryptography</div>
+        <div class="domain-desc">Weak hashes (MD5/SHA1), ECB mode, static IVs, key rotation, JWT algorithm confusion</div>
+      </div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-num">15</span>
+      <span class="domain-icon">🔗</span>
+      <div>
+        <div class="domain-name">CI/CD Supply Chain</div>
+        <div class="domain-desc">Pipeline secrets, lockfiles, dependency confusion, typosquatting, SBOM, signed commits</div>
+      </div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-num">16</span>
+      <span class="domain-icon">📋</span>
+      <div>
+        <div class="domain-name">Logging & Monitoring</div>
+        <div class="domain-desc">Log injection, PII in logs, audit trails, alerting gaps, health check leaks</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="chalk-divider"></div>
+
+<!-- AGENTS -->
+<section id="agents">
+  <div class="section-label">Agent Compatibility</div>
+  <h2>Works With Your Agent</h2>
+  <p class="section-intro">
+    Cicada ships with <code class="inline">AGENTS.md</code> and <code class="inline">opencode.json</code>
+    for agent registration. Each agent loads SKILL.md differently — setup is automatic after install.
+  </p>
+
+  <div class="agent-grid">
+    <div class="agent-card">
+      <div class="agent-name">CLAUDE</div>
+      <div class="agent-desc">
+        Place <code class="inline">AGENTS.md</code> in project root or <code class="inline">.claude/</code>. 
+        Claude reads it automatically. Type <code class="inline">/cicada</code> to invoke.
+      </div>
+      <div class="agent-cmd">/cicada</div>
+    </div>
+    <div class="agent-card">
+      <div class="agent-name">OPENCODE</div>
+      <div class="agent-desc">
+        Place <code class="inline">opencode.json</code> + <code class="inline">AGENTS.md</code> in 
+        project root. Registered as a slash command automatically.
+      </div>
+      <div class="agent-cmd">/cicada</div>
+    </div>
+    <div class="agent-card">
+      <div class="agent-name">CODEX</div>
+      <div class="agent-desc">
+        Load SKILL.md directly. Codex reads it from context and runs the audit on command.
+      </div>
+      <div class="agent-cmd">/load-skill SKILL.md → /cicada</div>
+    </div>
+    <div class="agent-card">
+      <div class="agent-name">CURSOR / WINDSURF</div>
+      <div class="agent-desc">
+        Load <code class="inline">SKILL.md</code> as a rules file, or use the <code class="inline">.cicada</code> 
+        config marker for automatic discovery.
+      </div>
+      <div class="agent-cmd">Rules file or .cicada config</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 44px;">
+    <div class="section-label">Agent Trigger Phrases</div>
+    <h3>What activates Cicada</h3>
+    <div class="triggers-list">
+      <span class="trigger-pill">/cicada</span>
+      <span class="trigger-pill">security audit</span>
+      <span class="trigger-pill">vulnerability scan</span>
+      <span class="trigger-pill">check for vulnerabilities</span>
+      <span class="trigger-pill">find security issues</span>
+      <span class="trigger-pill">is my app secure</span>
+      <span class="trigger-pill">audit my backend</span>
+      <span class="trigger-pill">audit my auth</span>
+      <span class="trigger-pill">OWASP review</span>
+      <span class="trigger-pill">pentest my code</span>
+      <span class="trigger-pill">HackerOne style review</span>
+      <span class="trigger-pill">fix security issues</span>
+      <span class="trigger-pill">patch vulnerabilities</span>
+      <span class="trigger-pill">audit my Flutter app</span>
+      <span class="trigger-pill">is this production-ready</span>
+    </div>
+  </div>
+</section>
+
+<div class="chalk-divider"></div>
+
+<!-- REPO STRUCTURE -->
+<section id="structure">
+  <div class="section-label">Repository</div>
+  <h2>Repository Structure</h2>
+  <p class="section-intro">Everything Cicada needs ships in a single flat repo. No dependencies. No runtime.</p>
+
+  <div class="tree">
+    <pre><span style="color:var(--chalk-dim)">cicada/</span>
+├── <span class="file-main">SKILL.md</span>               <span class="file-comment">← Main skill — security audit engine (2199 lines, 16 domains)</span>
+├── <span class="file-green">AGENTS.md</span>              <span class="file-comment">← Agent config for CLAUDE / OPENCODE (/cicada trigger)</span>
+├── <span class="file-green">opencode.json</span>          <span class="file-comment">← OPENCODE agent registration (/cicada slash command)</span>
+├── <span class="file-yellow">install.sh</span>             <span class="file-comment">← One-line installer — copies files, creates .cicada/</span>
+├── <span class="file-yellow">report.md</span>              <span class="file-comment">← Generated audit report (created on each run)</span>
+├── <span style="color:var(--chalk-dim)">.env.example</span>           <span class="file-comment">← Secure env template (no real secrets)</span>
+├── <span style="color:var(--chalk-dim)">.gitignore</span>             <span class="file-comment">← Standard ignores</span>
+├── <span style="color:var(--chalk-dim)">.cicada</span>                <span class="file-comment">← Config marker for LLM tool discovery</span>
+└── <span style="color:var(--chalk-dim)">templates/</span>
+    └── <span style="color:var(--chalk-dim)">report-template.md</span> <span class="file-comment">← Report output template</span></pre>
+  </div>
+</section>
+
+<div class="chalk-divider"></div>
+
+<!-- CI -->
+<section id="ci">
+  <div class="section-label">Automation</div>
+  <h2>CI Integration</h2>
+  <p class="section-intro">
+    Drop Cicada's checks into your GitHub Actions pipeline. Catch secrets, injections,
+    and vulnerable deps on every pull request — before they merge.
+  </p>
+
+  <div class="ci-steps">
+    <div class="ci-step">
+      <div class="ci-step-num">1</div>
+      <div class="ci-step-text"><strong>Hardcoded Secrets Scan</strong> — grep for string literals ≥32 chars matching API key patterns across <code class="inline">*.js</code>, <code class="inline">*.ts</code>, <code class="inline">*.py</code>, <code class="inline">*.go</code>. Fails build on hit.</div>
+    </div>
+    <div class="ci-step">
+      <div class="ci-step-num">2</div>
+      <div class="ci-step-text"><strong>Command Injection Check</strong> — scan for <code class="inline">exec(\`</code> patterns in JS/TS source files. Flags potential shell injection vectors.</div>
+    </div>
+    <div class="ci-step">
+      <div class="ci-step-num">3</div>
+      <div class="ci-step-text"><strong>Weak RNG for Tokens</strong> — detect <code class="inline">Math.random</code> or <code class="inline">Date.now</code> near token/secret/reset/magic keywords. Flags insecure randomness.</div>
+    </div>
+    <div class="ci-step">
+      <div class="ci-step-num">4</div>
+      <div class="ci-step-text"><strong>Dependency Audit</strong> — runs <code class="inline">npm audit --audit-level=high</code> automatically if <code class="inline">package.json</code> is present. Blocks on high/critical CVEs.</div>
+    </div>
+  </div>
+
+  <div class="install-block" style="margin-top:32px;">
+    <span class="install-block-label">.github/workflows/security-audit.yml</span>
+    <div class="code-block">
+      <pre><span class="comment">name: Security Audit</span>
+<span class="comment">on: [pull_request]</span>
+<span class="highlight">permissions:</span>
+  <span class="cmd">contents: read</span>
+  <span class="cmd">checks: write</span>
+<span class="highlight">jobs:</span>
+  <span class="cmd">audit:</span>
+    <span class="cmd">runs-on: ubuntu-latest</span>
+    <span class="cmd">steps:</span>
+      <span class="cmd">- uses: actions/checkout@v4</span>
+      <span class="comment">      # hardcoded secrets</span>
+      <span class="cmd">      - name: Scan secrets</span>
+        <span class="cmd">run: |</span>
+          <span class="cmd">  if grep -rE "['\"][A-Za-z0-9_\-]{32,}['\"]" \</span>
+          <span class="cmd">    --include="*.{js,ts,py,go}" --exclude-dir=node_modules; then</span>
+          <span class="cmd">    echo "Potential secrets found!"; exit 1; fi</span>
+      <span class="comment">      # dep audit</span>
+      <span class="cmd">      - name: npm audit</span>
+        <span class="cmd">run: |</span>
+          <span class="cmd">  if [ -f package.json ]; then npm audit --audit-level=high; fi</span></pre>
+    </div>
+  </div>
+</section>
+
+<div class="chalk-divider"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">CICADA 🦗</div>
+  <p class="footer-sub">Security Audit & Fix Skill for LLM Coding Agents</p>
+  <div class="footer-links">
+    <a href="https://github.com/Synthrun/Cicada" target="_blank">GitHub</a>
+    <a href="https://github.com/Synthrun/Cicada/blob/main/SKILL.md" target="_blank">SKILL.md</a>
+    <a href="https://github.com/Synthrun/Cicada/blob/main/AGENTS.md" target="_blank">AGENTS.md</a>
+    <a href="https://github.com/Synthrun/Cicada/blob/main/install.sh" target="_blank">install.sh</a>
+    <a href="https://github.com/Synthrun" target="_blank">Synthrun</a>
+  </div>
+  <p class="footer-mit">MIT License · Free to use, modify, and contribute · Built by Synthrun</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

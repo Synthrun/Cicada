@@ -84,7 +84,6 @@ Select a mode and the audit proceeds across all 16 domains.
 cicada/
 ├── SKILL.md               ← Main skill — the security audit engine (2132 lines, 16 domains)
 ├── AGENTS.md              ← Agent config for CLAUDE / OPENCODE (/cicada)
-├── opencode.json          ← OPENCODE agent registration (/cicada)
 ├── install.sh             ← One-line installer
 ├── README.md              ← This file
 ├── .gitignore             ← Standard ignores
